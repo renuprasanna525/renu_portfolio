@@ -21,13 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-CSRF_TRUSTED_ORIGINS = []
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY", "django-insecure-simple-demo-key-change-in-production"
 )
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://renu-portfolio-iyke.onrender.com",
+]
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
